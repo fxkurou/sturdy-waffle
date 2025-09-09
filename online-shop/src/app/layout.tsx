@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,8 +25,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
+        <header>
+            <div className={"header-container"}>
+                <Link href="/products">
+                    <button className={"header-button"}>
+                        <img className={"header-button-image"} src={"/header-button.svg"} alt={"Button"}/>
+                    </button>
+                </Link>
+                <Link href="/">
+                    <img className={"header-image"} src={"/Logo.svg"} alt="Logo" />
+                </Link>
+            </div>
+        </header>
         {children}
+        <footer>
+            <div className={"footer-container"}>
+                <nav className={"footer-container-nav"}>
+                    <Link href="/about">About Us</Link>
+                    <Link href="/contacts">Contacts</Link>
+                    <Link href="/terms">Terms & Conditions</Link>
+                    <Link href="/privacy">Privacy Policy</Link>
+                </nav>
+                <p className={"footer-text"}>© Copyright 2023 Lorem Ipsum inc.</p>
+            </div>
+        </footer>
       </body>
     </html>
   );
