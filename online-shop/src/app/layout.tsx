@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.scss";
+import "../styles/globals.scss";
 import Link from "next/link";
+import Image from "next/image";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,16 +27,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+          <title>Online Shop</title>
+          <Script src="/api_faker.js"></Script>
+      </head>
       <body>
         <header>
             <div className={"header-container"}>
-                <Link href="/products">
+                <Link href="/catalog">
                     <button className={"header-button"}>
-                        <img className={"header-button-image"} src={"/header-button.svg"} alt={"Button"}/>
+                        <Image className={"header-button-image"} src={"/header-button.svg"} alt={"Button"} width={28} height={32} />
                     </button>
                 </Link>
                 <Link href="/">
-                    <img className={"header-image"} src={"/Logo.svg"} alt="Logo" />
+                    <Image className={"header-image"} src={"/images/Logo.svg"} alt="Logo" width={145} height={32}/>
                 </Link>
             </div>
         </header>

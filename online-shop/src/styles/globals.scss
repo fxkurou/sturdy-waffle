@@ -12,6 +12,52 @@
   }
 }
 
+// Color Variables
+$brand-blue: #11305E;
+$brand-red: #d63636;
+$brand-orange: #ff9900;
+$brand-light-blue: #1976D2;
+$brand-black: #000;
+$brand-lite-black: #333;
+$brand-grey: #777;
+$brand-background: #f0f0f0;
+$brand-white: #fff;
+
+// Font Variables
+$font-play: "Play", sans-serif;
+$font-roboto: "Roboto", sans-serif;
+
+// Font Mixins
+@mixin play-bold {
+  font-family: $font-play;
+  font-weight: bold;
+}
+
+@mixin play-regular {
+  font-family: $font-play;
+  font-weight: normal;
+}
+
+@mixin roboto-bold {
+  font-family: $font-roboto;
+  font-weight: bold;
+}
+
+@mixin roboto-medium {
+  font-family: $font-roboto;
+  font-weight: 500;
+}
+
+@mixin roboto-regular {
+  font-family: $font-roboto;
+  font-weight: normal;
+}
+
+@mixin roboto-light {
+  font-family: $font-roboto;
+  font-weight: 300;
+}
+
 html,
 body {
   max-width: 100vw;
@@ -62,13 +108,11 @@ a {
 
 .header-button-image {
   padding: 0;
-  height: 32px;
-  width: 28px;
   left: 2px;
 }
 
 .header-image {
-  padding: 16px 48px;
+  margin: 16px 0 16px 48px;
 }
 
 .footer-container {
